@@ -1,0 +1,80 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from './Hero.astro'
+import Feature from './Feature.astro'
+import Counter from './Counter.astro'
+import ContentMedia from './ContentMedia.astro'
+import SearchBar from './SearchBar.astro';
+
+const res = await fetch('https://acc-directus.sabah.gov.my/items/Policy');
+const jsonData = await res.json();
+const displayArray = jsonData.data.map(item => ({
+    id: item.id,
+    status: item.status,
+    title: item.title || '',
+    summary:item.Description || '',
+    
+    date: item.tarikh || '',
+    pdf: item.File_Policy || ''
+  }));
+
+  // console.log(displayArray);
+
+
+const data=displayArray;
+
+const filteredData = data.filter(item => item.status === 'published');
+
+console.log(filteredData)
+---
+
+
+
+ 
+  
+
+    <h1 class="text-center">POLISI</h1>
+    
+    <div class="pt-4 max-w-7xl  h-1/4   overflow-auto  p-2 mx-auto sm:p-4 dark:text-gray-100">
+ 
+      <!-- <div class="mx-auto max-w-7xl"><SearchBar /></div> -->
+
+
+
+      <table class="  text-md min-w-max  ">
+        <thead class="">
+          <tr>
+            <th class="p-3">Tajuk</th>
+            <th class="p-3">Deskripsi</th>
+            <th class="p-3">Muat Turun</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {filteredData.map(item => (
+    <div key={item.id}>
+            <tr class="border-b odd:bg-white  even:bg-gray-100 dark:odd:bg-zinc-900  dark:even:bg-gray-950 hover:bg-gray-200 dark:hover:bg-gray-700 dark:border-gray-700 " >
+              
+              <td class="py-2"><a href={`https://acc-directus.sabah.gov.my/assets/${item.pdf}.pdf`} target="_blank" rel="noopener noreferrer">  
+                {item.title}
+                </a>
+                
+                </td>
+              <td class="py-2">
+               
+                {item.summary}
+              </td>
+              <td class="py-2 text-center">
+                <a class="ml-2" href={`https://acc-directus.sabah.gov.my/assets/${item.pdf}.pdf?download`} target="_blank" rel="noopener noreferrer">  
+                PDF
+                </a>
+                </td>
+            </tr>
+          </div>
+  ))}
+        </tbody>
+      </table>
+    </div>
+  
+
+

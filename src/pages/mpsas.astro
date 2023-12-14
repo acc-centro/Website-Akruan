@@ -1,0 +1,75 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
+import Quicklink from '../components/Quicklink.astro'
+const res = await fetch('https://acc-directus.sabah.gov.my/items/MPSAS');
+const jsonData = await res.json();
+
+const displayArray = jsonData.data.map(item => ({
+    id: item.id,
+    title: item.title || '',
+    tag:item.tag || '',
+    number:item.NO_MPSAS || '',
+    description:item.description|| '',
+    pdf: item.MPSASpdf || ''
+  }));
+
+  // console.log(displayArray);
+  const sortedArray = displayArray.slice().sort((a, b) => a.number - b.number);
+
+// console.log(sortedArray);
+
+const data=sortedArray;
+
+
+
+---
+
+<DefaultLayout title="Home">
+  <!-- <Hero /> -->
+
+  <h1 class="text-center mb-6">MPSAS</h1>
+  
+  
+  <div class="pt-4 max-w-7xl h-1/5 mx-auto overflow-auto ">
+    
+    <table class="  text-md min-w-max  ">
+      <thead class="">
+        <tr>
+          <th class="p-3">Tag</th>
+          <th class="p-3">Tajuk</th>
+          <th class="p-3">Deskripsi</th>
+          <th class="p-3">Muat Turun</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {data.map(item => (
+  <div key={item.id}>
+          <tr class="border-b odd:bg-white  even:bg-gray-100 dark:odd:bg-zinc-900  dark:even:bg-gray-950 hover:bg-gray-200 dark:hover:bg-gray-700 dark:border-gray-700 " >
+            <td class="py-2">
+              {item.tag}
+            </td>
+            <td class="py-2">
+              <a href={`https://acc-directus.sabah.gov.my/assets/${item.pdf}.pdf`} target="_blank" rel="noopener noreferrer">  
+              {item.title}
+              </a>
+            </td>
+            <td class="py-2">
+              {item.description}
+            </td>
+            <td class="py-2 text-center">
+              <a class="ml-2" href={`https://acc-directus.sabah.gov.my/assets/${item.pdf}.pdf?download`} target="_blank" rel="noopener noreferrer">  
+              PDF
+              </a>
+            </td>
+          </tr>
+        </div>
+))}
+      </tbody>
+    </table>
+  </div>
+
+  <Quicklink/>
+
+</DefaultLayout>

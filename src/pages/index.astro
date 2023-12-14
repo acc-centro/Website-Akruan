@@ -1,0 +1,89 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
+import Feature from '../components/Feature.astro'
+import Counter from '../components/Counter.astro'
+import ContentMedia from '../components/ContentMedia.astro'
+import Quicklink from '../components/Quicklink.astro'
+---
+
+<DefaultLayout title="Home">
+  <Hero />
+  <section class="mt-64 mb-32">
+    <div class="container">
+      <h2 class="mb-16 text-6xl">Statistik Terkini</h2>
+      <div class="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-4">
+        <Counter count="130" title="Akta" sub="berjaya dikelaskan" />
+        <Counter count="17" title="Modul" sub="dimajukan" />
+        <Counter count="500" title="Jabatan" sub="menggunakan" />
+        <Counter count="18+" title="Program" sub="dijalankan" />
+      </div>
+    </div>
+  </section>
+  <section class="">
+    <div class="container px-4 py-16 mx-auto space-y-8 lg:max-w-3xl">
+      <div class="container max-w-5xl px-4 mt-24 py-12 mx-auto">
+        <div class="grid gap-4 mx-4 sm:grid-cols-12">
+          <div class="col-span-12 sm:col-span-3">
+            <div class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-indigo-400">
+              <h3 class="text-3xl font-semibold">Aktiviti Terkini Pelaksanaan Perakaunan Akruan </h3>
+              <span class="text-sm font-bold tracking-wider uppercase ">Kerajaan Negeri Sabah</span>
+            </div>
+          </div>
+          <div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">
+            <div class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-800">
+              <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-indigo-400">
+                <h3 class="text-xl font-semibold tracking-wide">Pengumuman Pelaksanaan perakaunan akruan </h3>
+                <time class="text-xs tracking-wide uppercase ">Nov 2019</time>
+                <p class="mt-3">Pengumuman pelaksanaan perakaunan akruan Kerajaan Negeri oleh YAB Ketua Menteri</p>
+                            <img src="https://acc-directus.sabah.gov.my/assets/21b16b3e-b19b-4606-9cd6-64aa3e0aa3f2" class=" mt-3 justify-items-center w-5/6 h-2/3 " />
+                            
+    
+          
+                 </div>
+            
+              
+                        <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-indigo-400">
+                <h3 class="text-xl font-semibold tracking-wide">Polisi Liabiliti Hasil dan Bekerja lengkap digubal</h3>
+                <time class="text-xs tracking-wide uppercase ">Jul 2021</time>
+                <p class="mt-3">100% Data Baki Awal Aset dikumpul di semua Kementerian</p>
+              </div>
+                        <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-indigo-400">
+                <h3 class="text-xl font-semibold tracking-wide">Manual Perakaunan Akruan Kerajaan Negeri diterbitkan</h3>
+                <time class="text-xs tracking-wide uppercase ">Nov 2021</time>
+                <p class="mt-3">&quot;insert detail here&quot;</p>
+                            <img src="https://acc-directus.sabah.gov.my/assets/7057caea-59fd-41b1-8d08-98967758dd32" class=" justify-items-center w-5/6 h-2/3 " />
+                            
+    
+    
+              </div>
+                        
+                        <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-indigo-400">
+                <h3 class="text-xl font-semibold tracking-wide">Prototype Sistem i-SFAS Siap Dibangunkan Sepenuhnya</h3>
+                <time class="text-xs tracking-wide uppercase ">Dis 2021</time>
+                <p class="mt-3">100% Data Baki Awal Aset dikumpul di semua jabatan. Migrasi Awal Aset ke dalam Scasset(i-SFAS)</p>
+                            
+              </div>
+                        <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-indigo-400">
+                <h3 class="text-xl font-semibold tracking-wide">Scasset Go-Live</h3>
+                <time class="text-xs tracking-wide uppercase ">Jan 2022</time>
+                <p class="mt-3">Trial run i-SFAS</p>
+                            <img src="https://acc-directus.sabah.gov.my/assets/ddeadc5a-60e3-49e4-a742-72e66468afee" class=" justify-items-center w-5/6 h-2/3 " /> 
+              </div>
+                        <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-indigo-400">
+                <h3 class="text-xl font-semibold tracking-wide">Polisi Peralihan Lengkap Digubal</h3>
+                <time class="text-xs tracking-wide uppercase ">Ogos 2022</time>
+                <p class="mt-3">&quot;insert detail here&quot;</p>
+              </div>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <Quicklink/>
+  
+</DefaultLayout>

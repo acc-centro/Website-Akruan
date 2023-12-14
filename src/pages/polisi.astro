@@ -1,0 +1,25 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Hero from '../components/Hero.astro'
+import Feature from '../components/Feature.astro'
+import Counter from '../components/Counter.astro'
+import Quicklink from '../components/Quicklink.astro'
+import Polisi1 from '../components/Polisi_1.astro'
+const res = await fetch('https://acc-directus.sabah.gov.my/items/Policy');
+const jsonData = await res.json();
+const titles = jsonData.data.map(item => item.title);
+const id = jsonData.data.map(item => item.id);
+const pdf = jsonData.data.map(item => item.File_Policy);
+// console.log(pdf);
+
+
+const pol=titles;
+---
+<DefaultLayout title="Home">
+  <Polisi1/>
+  <Quicklink/>
+
+
+</DefaultLayout>
+
+
