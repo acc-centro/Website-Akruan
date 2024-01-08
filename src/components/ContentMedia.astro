@@ -7,11 +7,11 @@ const { imgSrc, reverseImg = false } = Astro.props
 <section class="my-64">
   <div class="container">
     <div class="grid grid-cols-1 gap-24 md:grid-cols-2">
-      {!reverseImg ? <Media class="rounded-lg" src={imgSrc} /> : ''}
+      {!reverseImg ? <Media class="rounded-lg" src="https://acc-directus.sabah.gov.my/assets/09ea1045-026c-4e85-aa74-b4506dbbc224.jpg" /> : ''}
       <div class="space-content flex flex-col justify-center">
         <slot />
       </div>
-      {reverseImg ? <Media class="rounded-lg" src={imgSrc} /> : ''}
+      {reverseImg ? <Media class="rounded-lg" src="https://acc-directus.sabah.gov.my/assets/05f28c5b-6be9-4ada-a99b-dc1f4bd4b692.jpg" /> : ''}
     </div>
   </div>
 </section>

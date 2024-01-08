@@ -4,6 +4,7 @@ import Hero from '../components/Hero.astro'
 import Feature from '../components/Feature.astro'
 import Counter from '../components/Counter.astro'
 import ContentMedia from '../components/ContentMedia.astro'
+import Quicklink from '../components/Quicklink.astro'
 
 const res = await fetch('https://acc-directus.sabah.gov.my/items/staff_name');
 const jsonData = await res.json();
@@ -220,41 +221,6 @@ const data=displayArray;
     
   
 
-  <ContentMedia >
-    <p class="text-2xl">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-       enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-       velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-  
-
-  </ContentMedia>
-  <ContentMedia  reverseImg={true}> 
-    <!-- insert image here -->
-    <div class="">
-      <h2 class="mb-12 text-4xl font-bold leadi text-center sm:text-5xl">Pautan Pantas</h2>
-      <div class="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">
-        <details>
-          <summary class="py-2 outline-none cursor-pointer focus:underline">Optio maiores eligendi molestiae totam dolores similique?</summary>
-          <div class="px-4 pb-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde neque in fugiat magni, quas animi enim veritatis deleniti ex. Impedit.</p>
-          </div>
-        </details>
-        <details>
-          <summary class="py-2 outline-none cursor-pointer focus:underline">Modi dolorem veritatis culpa quos consequuntur beatae itaque excepturi perspiciatis?</summary>
-          <div class="px-4 pb-4">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est aspernatur quae, eos explicabo odit minima libero veniam similique quibusdam doloribus facilis ipsa accusantium vel maiores corrupti! Libero voluptate a doloribus?</p>
-          </div>
-        </details>
-        <details>
-          <summary class="py-2 outline-none cursor-pointer focus:underline">Magni reprehenderit possimus debitis?</summary>
-          <div class="px-4 pb-4 space-y-2">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut voluptates aspernatur dolores in consequatur doloremque inventore reprehenderit, consequuntur perspiciatis architecto.</p>
-            <p>Sed consectetur quod tenetur! Voluptatibus culpa incidunt veritatis velit quasi cupiditate unde eaque! Iure, voluptatibus autem eaque unde possimus quae.</p>
-          </div>
-        </details>
-      </div>
-    </div>
-  </ContentMedia>
+  <Quicklink/>
  
 </DefaultLayout>
